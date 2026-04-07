@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-flux-bg: #0A0A0F;
+  --color-flux-surface: #12121A;
+  --color-flux-card: #1A1A25;
+  --color-flux-border: #2A2A35;
+  --color-flux-blue: #3B82F6;
+  --color-flux-blue-light: #60A5FA;
+  --color-flux-green: #22C55E;
+  --color-flux-amber: #F59E0B;
+  --color-flux-red: #EF4444;
+  --color-flux-text: #E5E7EB;
+  --color-flux-muted: #9CA3AF;
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--color-flux-bg);
+  color: var(--color-flux-text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+.glow-blue {
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
+}
+
+.glow-blue-hover:hover {
+  box-shadow: 0 0 50px rgba(59, 130, 246, 0.25);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #3B82F6, #60A5FA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sine-wave-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='none' stroke='%233B82F6' stroke-width='2' stroke-opacity='0.1' d='M0,160 C360,80 360,240 720,160 C1080,80 1080,240 1440,160'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 1440px 320px;
+  background-position: center;
+}

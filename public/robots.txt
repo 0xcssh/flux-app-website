@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://fluxcycle.app
+
+# Sitemaps
+Sitemap: https://fluxcycle.app/sitemap.xml
