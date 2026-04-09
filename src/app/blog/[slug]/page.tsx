@@ -4,6 +4,7 @@ import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import ArticleLayout from "@/components/blog/ArticleLayout";
 import Footer from "@/components/landing/Footer";
 import { SITE_URL } from "@/lib/constants";
+import { generateArticleSchema } from "@/lib/schema";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -23,6 +24,9 @@ export async function generateMetadata({
     title: post.title,
     description: post.description,
     keywords: post.keywords,
+    alternates: {
+      canonical: `${SITE_URL}/blog/${slug}`,
+    },
     openGraph: {
       type: "article",
       title: post.title,
@@ -51,6 +55,12 @@ export default async function BlogPostPage({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateArticleSchema(post)),
+        }}
+      />
       <ArticleLayout post={post} />
       <Footer />
     </>

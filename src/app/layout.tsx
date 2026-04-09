@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
 import { generateAppSchema, generateWebsiteSchema } from "@/lib/schema";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
@@ -48,6 +49,9 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: ["/images/og-image.jpg"],
   },
+  alternates: {
+    canonical: SITE_URL,
+  },
   robots: {
     index: true,
     follow: true,
@@ -72,6 +76,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>
+        <Analytics />
       </body>
     </html>
   );
