@@ -16,8 +16,8 @@ export default function Footer() {
 
           {/* Links */}
           <nav className="flex flex-wrap justify-center gap-6 text-sm text-flux-muted">
-            <a href="#features" className="hover:text-white transition-colors">Features</a>
-            <a href="#science" className="hover:text-white transition-colors">Science</a>
+            <a href="/#features" className="hover:text-white transition-colors">Features</a>
+            <a href="/#science" className="hover:text-white transition-colors">Science</a>
             <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
